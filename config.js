@@ -109,9 +109,9 @@ global.author = ` ╭ 𝗚𝗮𝘁𝗮 𝗗𝗶𝗼𝘀 ✓\n ┃\n ┃ » 𝙶�
 // [ES] > INFORMACIÓN DE VERSIONES DEL BOT, POR FAVOR 
 // MANTENGA ESTO SIN MODIFICAR, NOS ESFORZAMOS A DIARIO POR OFRECERLES UN BOT PARA LA COMUNIDAD, SEA AGRADECIDO 😉
 // [EN] > BOT VERSION INFORMATION, PLEASE KEEP THIS UNCHANGED, WE STRIVE DAILY TO PROVIDE YOU WITH A BOT FOR THE COMMUNITY, BE GRATEFUL
-global.vs = "1.7.0"
-global.vsJB = "5.0 (Beta)"
-global.gt = "𝙂𝙖𝙩𝙖𝘽𝙤𝙩-𝙈𝘿"
+global.vs = "3.0/ls-mod"
+global.vsJB = "1.5-mod"
+global.gt = "ms-mxls"
 global.imagen = fs.readFileSync('./Menu2.jpg')
 
 // • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
@@ -139,7 +139,11 @@ global.exito = eg
 
 // • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
 global.wm = "MX-BOT"
-global.igfg = "𝙂𝙖𝙩𝙖𝘽𝙤𝙩-𝙈𝘿"
+global.textoInfo = 'Designed and created by Alan.v.j.v / @mdmx_mktg'
+global.currency = 'MxCoins'
+global.currency2 = 'Boletos'
+global.currency3 = 'Energia'
+global.igfg = "ls-mod"
 global.nomorown = "5493873655135"
 global.pdoc = ["application/vnd.openxmlformats-officedocument.presentationml.presentation", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "application/vnd.ms-excel", "application/msword", "application/pdf", "text/rtf"]
 // • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
@@ -152,6 +156,17 @@ global.flaaa = [
 'https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=amped-logo&doScale=true&scaleWidth=800&scaleHeight=500&text=',
 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&text=',
 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&fillColor1Color=%23f2aa4c&fillColor2Color=%23f2aa4c&fillColor3Color=%23f2aa4c&fillColor4Color=%23f2aa4c&fillColor5Color=%23f2aa4c&fillColor6Color=%23f2aa4c&fillColor7Color=%23f2aa4c&fillColor8Color=%23f2aa4c&fillColor9Color=%23f2aa4c&fillColor10Color=%23f2aa4c&fillOutlineColor=%23f2aa4c&fillOutline2Color=%23f2aa4c&backgroundColor=%23101820&text='];
+
+// ---> Solo hay 6 imagenes para MDMX ahora.
+global.perfilfoto = 'https://qu.ax/zdOlq.jpg';
+global.mxMenu1 = 'https://qu.ax/tUBOj.png';
+global.mxMenu2 = 'https://qu.ax/afwZP.png';
+global.mxMenu3 = 'https://qu.ax/WBojJ.png';
+global.mxImg = 'https://qu.ax/Dshun.jpg';
+global.mxImg2 = 'https://qu.ax/mCfkh.jpg';
+global.mxImg3 = 'https://qu.ax/qkaru.jpg';
+global.mxVideo = 'https://qu.ax/akcNX.mp4';
+global.mxLogo = 'https://qu.ax/NvMcc.jpg';
 
 //• ── ⟢ · ENLACES : PAGOS · ⟣ ── •
 // ---> Enlaces directos y metodos de pago.
