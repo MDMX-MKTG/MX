@@ -153,22 +153,29 @@ global.flaaa = [
 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&text=',
 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&fillColor1Color=%23f2aa4c&fillColor2Color=%23f2aa4c&fillColor3Color=%23f2aa4c&fillColor4Color=%23f2aa4c&fillColor5Color=%23f2aa4c&fillColor6Color=%23f2aa4c&fillColor7Color=%23f2aa4c&fillColor8Color=%23f2aa4c&fillColor9Color=%23f2aa4c&fillColor10Color=%23f2aa4c&fillOutlineColor=%23f2aa4c&fillOutline2Color=%23f2aa4c&backgroundColor=%23101820&text='];
 
-global.cmenut = "❖––––––『"
-global.cmenub = "┊✦ "
-global.cmenuf = "╰━═┅═━––––––๑\n"
-global.cmenua = "\n⌕ ❙❘❙❙❘❙❚❙❘❙❙❚❙❘❙❘❙❚❙❘❙❙❚❙❘❙❙❘❙❚❙❘ ⌕\n     "
- 
-global.dmenut = "*❖─┅──┅〈*"
-global.dmenub = "*┊»*"
-global.dmenub2 = "*┊*"
-global.dmenuf = "*╰┅────────┅✦*"
-global.htjava = "⫹⫺"
-
-global.htki = "*⭑•̩̩͙⊱•••• ☪*"
-global.htka = "*☪ ••••̩̩͙⊰•⭑*"
-
-global.comienzo = "• • ◕◕════"
-global.fin = " • •"
+//• ── ⟢ · ENLACES : PAGOS · ⟣ ── •
+// ---> Enlaces directos y metodos de pago.
+global.ceotg = 'https://t.me/MDMX_MKTG';
+global.ceoig = 'https://www.instagram.com/mdmx_mktg';
+global.ceowa = 'wa.me/5493873655135';
+global.ceobot = 'wa.me/5493873655168';
+global.ceoasist = 'wa.me/51947454367';
+global.ceoatom = 'https://atom.bio/mdmx_mktg';
+global.ceofb = 'https://www.facebook.com/share/1F55Q9A2ut/?mibextid=qi2Omg';
+global.ceothd = 'https://www.threads.net/@mdmx_mktg';
+global.mrpago = '• *Alias:* MDMX.net\n• *CBU:* 0000003100081371412489';
+global.ceoapp = '• *Alias:* mdmb.ofc.dolarapp\n• *CBU:* 0000069704303965000655';
+global.ceobruk = '• *Alias:* mdmx.mktg\n• *CBU:* 1430001713041561100019';
+global.paypal = '• *Enlace:* https://www.paypal.me/mbmdoficial';
+global.canaltg = 'https://t.me/MDMX_CHANNEL';
+global.canalwa = 'https://whatsapp.com/channel/0029Vako2qm3WHTP1YZrLt1D';
+global.canalwa2 = 'https://whatsapp.com/channel/0029VarxxPbI1rcZMcwKBl2z';
+global.grupo1 = 'https://chat.whatsapp.com/KQ6kQ9eQgHlEdvkYxgte19'; //General
+global.grupo2 = 'https://chat.whatsapp.com/EqntacWlpP28ZbPcIIUEqN'; //Trabajos
+global.grupo3 = 'https://chat.whatsapp.com/FajR1YdkXgtIonKze9WGeO'; //Compras
+global.grupo4 = 'https://chat.whatsapp.com/EfbOgYFcA9QA2GDY31hWMf'; //Soporte
+global.grupo5 = 'https://chat.whatsapp.com/JvtYQ7dzIlY0Y57AyryWte'; //Marketing
+global.mxcomunity = 'https://chat.whatsapp.com/HF9jfgQro6LKQy0WqPHRzF'; //Comunidad
 
 global.botdate = `${moment.tz('America/Los_Angeles').format('DD/MM/YY')}`; //Asia/Jakarta
 global.bottime = `${moment.tz('America/Los_Angeles').format('HH:mm:ss')}`;//America/Los_Angeles
