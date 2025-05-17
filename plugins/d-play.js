@@ -1,3 +1,6 @@
+import yts from 'yt-search';
+import fetch from 'node-fetch';
+
 const handler = async (m, { conn, text, usedPrefix, command }) => {
 if (!text) return conn.sendMessage(m.chat, { text: `*[ ? ]*  Ingrese el comando y escriba el nombre de la musica que busca.\n\n• *Por ejemplo:*\n${usedPrefix + command} Ethereal` }, { quoted: m });
 
