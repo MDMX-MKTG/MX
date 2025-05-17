@@ -1,4 +1,48 @@
 import axios from 'axios';
+
+let handler = async (m, { conn, usedPrefix, args, command, text }) => {
+if (!args[0]) {
+return conn.sendMessage(m.chat, { text: `*[ ? ]*  Ingrese el comando mas un enlace de un video o imagen de *Instagram* para descargarlo.` }, { quoted: m });
+}
+const igUrlRegex = /^https?:\/\/www\.instagram\.com\/([a-zA-Z0-9_-]+)\/.*$/;
+if (!igUrlRegex.test(args[0])) {
+return conn.sendMessage(m.chat, { text: `*[ ✘ ]*  Verifica si el enlace es de un video o imagenn de *Instagram* para descargarlo.`}, { quoted: m });
+}
+
+try {
+await conn.sendMessage(m.chat, { text: `ⴵ _Descargando el pedido, espere un momento..._` }, { quoted: m });
+const response = await axios.get(
+`https://restapi-v2.simplebot.my.id/download/instagram?url=${encodeURIComponent(args[0])}`
+);
+
+const data = response.data;
+if (!data.status || !data.result || !data.result.downloadUrls) throw new Error('Respuesta inválida de la API');
+
+const { title, downloadUrls } = data.result;
+const sentUrls = new Set();
+
+for (let url of downloadUrls) {
+if (sentUrls.has(url)) continue;
+sentUrls.add(url);
+
+const isImage = /\.(jpe?g|png|webp|heic|tiff|bmp)(\?|$)/i.test(url);
+if (isImage) {
+await conn.sendMessage(m.chat, { image: { url: downloadUrls }, caption: `🖼️  ( *${title}.jpg* )` }, { quoted: m });
+} else {
+await conn.sendMessage(m.chat, { video: { url: downloadUrls }, caption: `🎬  ( *${title}.mp4* )` }, { quoted: m });
+}}
+} catch (error) {
+console.error(error);
+return conn.sendMessage(m.chat, { text: `⦗ ✘ ⦘ _Ocurrio un error con el comando: *${usedPrefix + command}*_\n- _Reporta el error al grupo de asistencia o usa el comando: *${usedPrefix}report*_` }, { quoted: m });
+}
+};
+handler.command = ["ig", "instagram"];
+
+export default handler;
+
+
+/*
+import axios from 'axios';
 let handler = async (m, { conn, usedPrefix, args, command, text }) => {
 if (!args[0]) {
 return conn.sendMessage(m.chat, { text: `*[ ? ]*  Ingrese el comando mas un enlace de un video o imagen de *Instagram* para descargarlo.` }, { quoted: m });
@@ -39,7 +83,7 @@ conn.sendMessage(m.chat, { text: `⦗ ✘ ⦘ _Ocurrio un error con el comando: 
 };
 handler.command = ["ig", "instagram"];
 export default handler;
-
+*/
 
 /*import fetch from 'node-fetch';
 import axios from 'axios';
