@@ -69,7 +69,14 @@ await conn.sendMessage(m.chat, { text: `*[ 📍 ]*  *Enlace:* ${link}` }, { quot
 conn.sendMessage(m.chat, { text: `⦗ ✘ ⦘ _Ocurrio un error con el comando: *${usedPrefix + command} ${args[0]}*_\n- _Reporta el error al grupo de asistencia o usa el comando: *${usedPrefix}report*_` }, { quoted: m });
 console.log(e) 
 }}
- }
+ } else if (args[0] === 'timg' || args[0] === 'jpg') {
+if (!/sticker/.test(mime)) return conn.sendMessage(m.chat, { text: `*[ ? ]*  Ingrese el comando y responda a un sticker sin movimiento para convertirlo en imagen.` }, { quoted: m });
+const media = await q.download();
+let out = await webp2png(media).catch(_ => null) || Buffer.alloc(0);
+await conn.sendMessage(m.chat, { image: { url: out }, caption: `🖼️ Convertirdor ( ${wm}.jpg )`, mentions: [m.sender] }, { quoted: m });
+//await conn.sendFile(m.chat, out, 'error.png', null, m)
+
+}
 }
 handler.command = ["conv", "cv"];
 export default handler;
