@@ -9,7 +9,7 @@ let pesan = args.join` `
 let teks = `• ── • ✦ *\`MENSAJE\`* ✦ • ──•\n- ${pesan || '¡Hola!'}\n\n`
 for (let mem of participants) {
 teks += `· ⟢  @${mem.id.split('@')[0]}\n`}
-await conn.sendMessage((m.chat, { text: teks, mentions: [ participant.map(a => a.id ]}, { quoted: m })
+conn.sendMessage(m.chat, { text: `${teks}`, mentions: parseMention(teks), contextInfo: { externalAdReply: { title: '⫶☰ B I E N V E N I D O', body: '🝐 Este es el listado de menus disponibles.', thumbnailUrl: mxMenu3, sourceUrl: null, mediaType: 1, showAdAttribution: false, renderLargerThumbnail: false }}}, { quoted: m }) //Imagen personalizada con una imagen pequeña.
   //conn.sendMessage(m.chat, { text: teks, mentions: [ participants.map(a => a.id) ], contextInfo: { externalAdReply: { title: wm, body: textoInfo, thumbnailUrl: mxMenu1, sourceUrl: null, mediaType: 1, showAdAttribution: true, renderLargerThumbnail: true }}} , { quoted: m })
 }
 
