@@ -9,7 +9,8 @@ let pesan = args.join` `
 let teks = `• ── • ✦ *\`MENSAJE\`* ✦ • ──•\n- ${pesan || '¡Hola!'}\n\n`
 for (let mem of participants) {
 teks += `· ⟢  @${mem.id.split('@')[0]}\n`}
-conn.sendMessage(m.chat, { text: teks, mentions: [ participants.map(a => a.id) ], contextInfo: { externalAdReply: { title: wm, body: textoInfo, thumbnailUrl: mxMenu1, sourceUrl: null, mediaType: 1, showAdAttribution: true, renderLargerThumbnail: true }}} , { quoted: m })
+await conn.sendMessage((m.chat, { text: teks, mentions: [ participant.map(a => a.id ]}, { quoted: m })
+  //conn.sendMessage(m.chat, { text: teks, mentions: [ participants.map(a => a.id) ], contextInfo: { externalAdReply: { title: wm, body: textoInfo, thumbnailUrl: mxMenu1, sourceUrl: null, mediaType: 1, showAdAttribution: true, renderLargerThumbnail: true }}} , { quoted: m })
 }
 
 if (command == 'v.tag' || command == 'v.tags') {
