@@ -73,7 +73,7 @@ ${readMore}
 ─⊹ _${usedPrefix}ping_
 ─⊹ _${usedPrefix}server_
 ─⊹ _${usedPrefix}run_`.trim();
-conn.sendMessage(m.chat, { text: `${menu1}`, mentions: conn.conn.parseMention(menu1), contextInfo: { externalAdReply: { title: '⫶☰ 𝖨 𝖭 𝖥 𝖮 𝖱 Μ Λ 𝖢 𝖨 𝖮 𝖭', body: '✎ ᴍɪʀᴀ ʟᴀ ɪɴғᴏʀᴍᴀᴄɪᴏɴ ᴄᴏᴍᴘʟᴇᴛᴀ.', thumbnailUrl: mxMenu3, sourceUrl: null, mediaType: 1, showAdAttribution: true, renderLargerThumbnail: true }}} , { quoted: m }); //Imagen personalizada con una imagen grande.
+conn.sendMessage(m.chat, { text: menu1, mentions: [m.sender] }, { quoted: m })
 } else if (args[0] === '2' || args[0] === 'base') {
 let menu2 = `*⟣──•【  M E N U  :  2  】•──⟢*
 ❒ *Usuario:* ${taguser} 
