@@ -3,7 +3,7 @@ import cheerio from "cheerio";
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
 if (!text) {
-return conn.sendMessage(m.chat, { text: `*[ ? ]*  Ingrese el comando mas un enlace de un video o imagenes de *TikTok* para descargarlo.` }, { quoted: m });
+return conn.sendMessage(m.chat, { text: `*[ ? ]*  Ingrese el comando mas un enlace de un video de *TikTok* para descargarlo.` }, { quoted: m });
 }
 try {
 await conn.sendMessage(m.chat, { text: `ⴵ _Descargando el pedido, espere un momento..._` }, { quoted: m });
