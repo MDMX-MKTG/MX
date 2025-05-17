@@ -56,7 +56,8 @@ conn.sendMessage(m.chat, { text: `${resEnlace}\n⊸⊹ *Enlace:* ${link}` }, { q
 } catch (e) {
 conn.sendMessage(m.chat, { text: `⦗ ✘ ⦘ _Ocurrio un error con el comando: *${usedPrefix + command} ${args[0]}*_\n- _Reporta el error al grupo de asistencia o usa el comando: *${usedPrefix}report*_` }, { quoted: m });
 console.log(e)
-}}} else if (args[0] === 'url2' || args[0] === 'enlace2' || args[0] === 'link2') {
+}}
+} else if (args[0] === 'url2' || args[0] === 'enlace2' || args[0] === 'link2') {
 let mime = (q.msg || q).mimetype || ''
 if (!mime) return conn.sendMessage(m.chat, {text: `● _Ingrese el comando y responda a una imagen para convertirlo en un enlace._`}, { quoted: m })
 await conn.sendMessage(m.chat, { text: `ⴵ _Obteniendo resultados, espere un momento..._` }, { quoted: m })
@@ -68,7 +69,7 @@ let height = await source.getHeight()
 let width = await source.getWidth()
 let xXRelt = `•─• •⟤ \`CONVERTIDOR\` ⟥• •─•
 
-⊸⊹ *Comando:* ${usedPrefix + command} ${args[0]
+⊸⊹ *Comando:* ${usedPrefix + command} ${args[0]}
 ⊸⊹ *Tipo:* Imagen
 ⊸⊹ *Fecha:* ${botdate}
 ⊸⊹ *Anchura:* ${width}
