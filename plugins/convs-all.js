@@ -1,5 +1,8 @@
-import { webp2png } from '../lib/webp2mp4.js'
+import { webp2png } from '../lib/webp2mp4.js';
 import uploadImage from '../lib/uploadImage.js';
+import uploadFile from '../lib/uploadFile.js';
+import upload from '../lib/uploadFile2.js';
+import fetch from 'node-fetch';
 const handler = async (m, {conn, text, args, usedPrefix, command}) => {
 const q = m.quoted ? m.quoted : m;
 const mime = (q.msg || q).mimetype || q.mediaType || '';
@@ -71,14 +74,15 @@ conn.sendMessage(m.chat, { text: `⦗ ✘ ⦘ _Ocurrio un error con el comando: 
 console.log(e) 
 }}
  } else if (args[0] === 'timg' || args[0] === 'jpg') {
-if (!/sticker/.test(mime)) return conn.sendMessage(m.chat, { text: `*[ ? ]*  Ingrese el comando y responda a un sticker sin movimiento para convertirlo en imagen.` }, { quoted: m });
-const media = await q.download();
+if (!m.quoted) return conn.sendMessage(m.chat, { text: `*[ ? ]*  Ingrese el comando y responda a un sticker sin movimiento para convertirlo en una imagen.` }, { quoted: m });
+const q = m.quoted || m;
+let mime = q.mediaType || '';
+if (!/sticker/.test(mime)) return conn.sendMessage(m.chat, { text: `*[ ✘ ]*  El sticker que has respondido no es un sticker sin movimiento.\n- Recuerde responder a un sticker sin movimiento para convertirlo en una imagen.`}, { quoted: m });
+let media = await q.download();
 let out = await webp2png(media).catch(_ => null) || Buffer.alloc(0);
-await conn.sendMessage(m.chat, { image: { url: out }, caption: `🖼️ Convertirdor ( ${wm}.jpg )`, mentions: [m.sender] }, { quoted: m });
-//await conn.sendFile(m.chat, out, 'error.png', null, m)
-
-}
-}
+await conn.sendMessage(m.chat, { image: { url: out }, caption: `` }, { quoted: m });
+} 
+ }
 handler.command = ["conv", "cv"];
 export default handler;
 
