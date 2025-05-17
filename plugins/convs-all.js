@@ -1,4 +1,4 @@
-/*let { downloadContentFromMessage } = (await import('@whiskeysockets/baileys'));
+let { downloadContentFromMessage } = (await import('@whiskeysockets/baileys'));
 import fs from 'fs';
 import { ffmpeg, toAudio } from '../lib/converter.js';
 import FormData from 'form-data';
@@ -320,4 +320,3 @@ async function remini(imageData, operation) {
     )
   })
 }
-*/
