@@ -2,7 +2,7 @@ import fetch from 'node-fetch'
 import yts from 'yt-search'
 let handler = async (m, { conn, text, args, usedPrefix, command }) => {
 if (!text) {
-return conn.sendMessage(m.chat, { text: `*[ ? ]*Ingrese el comando mas el nombre de la cancion que busca.\n\n• *Por ejemplo:*\n${usedPrefix + command} Ethereal` }, { quoted: m })
+return conn.sendMessage(m.chat, { text: `*[ ? ]*  Ingrese el comando mas el nombre de la cancion que busca.\n\n• *Por ejemplo:*\n${usedPrefix + command} Ethereal` }, { quoted: m })
 }
 let ytres = await search(args.join(" "))
 if (!ytres.length) {
@@ -18,7 +18,7 @@ let txt = `•─• •⟤ \`MP4 • YOUTUBE\` ⟥• •─•
 ⊸⊹ *Publicado:* ${mdmx.ago}
 ⊸⊹ *Autor/a:* ${mdmx.author.name || 'Desconocido'}
 ⊸⊹ *Enlace:* ${mdmx.url}`
-await conn.sendFile(m.chat, mdmx.image, 'thumbnail.jpg', txt, m)
+//await conn.sendFile(m.chat, mdmx.image, 'thumbnail.jpg', txt, m)
 
 try {
 const resolution = '360'
@@ -30,7 +30,7 @@ if (data.status !== 'success') throw new Error('Fallo al obtener el vídeo.')
 const title = data.result.title
 const videoUrl = data.result.url
 
-await conn.sendMessage(m.chat, { video: { url: videoUrl }, mimetype: "video/mp4", caption: txt }, { quoted: m })
+await conn.sendMessage(m.chat, { video: { url: videoUrl }, mimetype: "video/mp4", caption: `🎬 *Descargado* ( ${title}.mp4 )` }, { quoted: m })
 } catch (error) {
 console.error(error)
 conn.sendMessage(m.chat, { text: `⦗ ✘ ⦘ _Ocurrio un error con el comando: *${usedPrefix + command}*_\n- _Reporta el error al grupo de asistencia o usa el comando: *${usedPrefix}report*_` }, { quoted: m })
