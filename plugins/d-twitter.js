@@ -1,7 +1,7 @@
 import axios from 'axios';
 import cheerio from 'cheerio';
 let handler = async (m, { conn, usedPrefix, command, args }) => {
-if (!args[0]) throw conn.sendMessage(m.chat, { text: `*[ ? ]*  Ingrese el comando mas un enlace de un video o imagen de *Twitter* para descargarlo.` }, { quoted: m });
+if (!args[0]) return conn.sendMessage(m.chat, { text: `*[ ? ]*  Ingrese el comando mas un enlace de un video o imagen de *Twitter* para descargarlo.` }, { quoted: m });
 const sender = m.sender.split('@')[0];
 const url = args[0];
 await conn.sendMessage(m.chat, { text: `ⴵ _Descargando el pedido, espere un momento..._` }, { quoted: m });
