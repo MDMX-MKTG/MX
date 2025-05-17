@@ -11,9 +11,9 @@ const videoResult = await ttsave.video(text);
 const { type, nickname, username, description, videoInfo, slides, audioUrl } = videoResult;
 let resultadoMetodo = `•─• •⟤ \`TIKTOK • DL\` ⟥• •─•
 
-⊸⊹ *Nombre:* ${nickname || "-"}
-⊸⊹ *Usuario:* ${username || "-"}
-⊸⊹ *Descripcion:* ${description || "-"}`.trim();
+⊸⊹ *Nombre:* ${nickname}
+⊸⊹ *Usuario:* ${username}
+⊸⊹ *Descripcion:* ${description}`.trim();
 
 if (type === "slide") {
 resultadoMetodo += "\n⊸⊹ *Tipo:* Imagenes";
