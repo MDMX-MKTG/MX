@@ -1,11 +1,11 @@
 import fetch from 'node-fetch'
 const { generateWAMessageContent, generateWAMessageFromContent, proto } = (await import('@whiskeysockets/baileys')).default
 
-let handler = async (m, { conn, text, usedPrefix, command }) => {
+let handler = async (m, { conn, text }) => {
 if (!text) return conn.sendMessage(m.chat, { text: `*[ ? ]*  Ingrese el comando y escriba lo que quiera buscar en *Google*.\n\n? *Por ejemplo:*\n${usedPrefix + command} Arboles` }, { quoted: m });
 
 let contenidos = `
-?â”€? ?? \`IMAGEN ? GOOGLE\` ?? ?â”€?
+?©¤? ?? \`IMAGEN ? GOOGLE\` ?? ?©¤?
 
 ?? *Plataforma:* Google
 ?? *Descargador:* Bot`;
@@ -24,7 +24,7 @@ let image = await createImage(result.link);
 
 push.push({
 body: proto.Message.InteractiveMessage.Body.fromObject({
-text: `${contenidos}\n?? *TÃ­tulo:* ${result.title}\n?? *DescripciÃ³n:* ${result.snippet}`
+text: `${contenidos}\n?? *T¨ªtulo:* ${result.title}\n?? *Descripci¨®n:* ${result.snippet}`
 }),
 footer: proto.Message.InteractiveMessage.Footer.fromObject({ text: '' }),
 header: proto.Message.InteractiveMessage.Header.fromObject({
@@ -68,4 +68,3 @@ console.error(error);
 handler.command = ["img", "imagen"]
 
 export default handler;
-

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import cheerio from 'cheerio';
 let handler = async (m, { conn, usedPrefix, command, args }) => {
-if (!args[0]) return conn.sendMessage(m.chat, { text: `*[ ? ]*  Ingrese el comando mas un enlace de un video o imagen de *Twitter* para descargarlo.` }, { quoted: m });
+if (!args[0]) throw conn.sendMessage(m.chat, { text: `*[ ? ]*  Ingrese el comando mas un enlace de un video o imagen de *Twitter* para descargarlo.` }, { quoted: m });
 const sender = m.sender.split('@')[0];
 const url = args[0];
 await conn.sendMessage(m.chat, { text: `ⴵ _Descargando el pedido, espere un momento..._` }, { quoted: m });
@@ -113,3 +113,44 @@ return { status: true, type: 'video', media: sortedResult.filter((video) => vide
 return { status: false, message: 'Error al obtener datos de twitsave\n\n' + String(err) };
 }
 }
+
+/*
+import fetch from 'node-fetch'
+import axios from 'axios'
+import cheerio from 'cheerio'
+import vm from 'node:vm'
+import qs from 'qs'
+const handler = async (m, {conn, text, args, usedPrefix, command}) => {
+const twitterUrlRegex = /^https?:\/\/(www\.)?twitter\.com\/(\w+)\/status\/(\d+)$/i 
+if (!text) return conn.sendMessage(m.chat, { text: `*[ ? ]*  Ingrese el comando mas un enlace de un video de *Twitter* para descargarlo.` }, { quoted: m })
+await conn.sendMessage(m.chat, { text: `_ⴵ Buscando resultados, espere un momento..._` }, { quoted: m })
+let contenidos = `
+•─• •⟤ \`TWITTER\` ⟥• •─•
+- _Resultado encontrado en *Twitter*._
+
+⊸⊹ *Descargado en:* WhatsApp
+⊸⊹ *Plataforma:* Twitter ( X )
+⊸⊹ *Descargador:* Bot
+⊸⊹ *Fecha:* ${botdate}
+⊸⊹ *Formato:* Video`
+try{ 
+const apiUrl = `${apis}/download/twitterv2?url=${encodeURIComponent(text)}`
+
+const response = await fetch(apiUrl)
+const jsonData = await response.json()
+const tweetTitle = jsonData.data.description
+console.log(tweetTitle)
+const tweetVideoUrl = jsonData.data.media[0].videos[0].url
+const shortUrl1 =await (await fetch(`https://tinyurl.com/api-create.php?url=${text}`)).text()
+const tweetTitleWithoutUrl = tweetTitle.replace(/https?:\/\/t\.co\/\w+/i, '').trim()
+await conn.sendMessage(m.chat, { video: { url: tweetVideoUrl }, caption: contenidos }, { quoted: m })
+} catch (e) {
+await conn.sendMessage(m.chat, { text: `⦗ ✘ ⦘ _Ocurrio un error con el comando: *${usedPrefix + command}*_\n- _Reporta el error al grupo de asistencia o usa el comando: *${usedPrefix}report*_` }, { quoted: m })
+console.log(e)
+
+}}
+handler.command = ["twitter", "tw", "x"]
+export default handler
+
+const delay = time => new Promise(res => setTimeout(res, time))
+*/
