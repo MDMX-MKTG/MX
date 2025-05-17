@@ -50,7 +50,7 @@ ${readMore}
 ╭• *${usedPrefix + command}* 26 =  *<actions>*
 ╭• *${usedPrefix + command}* 27 =  *<shop>*
 ╰───────────────•`
-conn.sendMessage(m.chat, { text: menu1, mentions: [m.sender, conn.user.jid] }, { quoted: m })
+conn.sendMessage(m.chat, { text: menu, mentions: [m.sender, conn.user.jid] }, { quoted: m })
 } else if (args[0] === '1' || args[0] === 'info') {
 let menu1 = `*⟣──•【  M E N U  :  1  】•──⟢*
 ❒ *Usuario:* ${taguser} 
