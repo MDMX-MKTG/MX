@@ -21,7 +21,7 @@ let txttt = `⫶☰ *CONVERTIDORES:*
 ● *${usedPrefix + command}* digit
 ● *${usedPrefix + command}* view
 ● *${usedPrefix + command}* vcard`
-let conn.sendMessage(m.chat, { text: `*[ ? ]*  Ingrese el comando y la opcion a convertir.\n\n• *Por ejemplo:*\n${usedPrefix + command} anime\n\n${txttt}` }, { quoted: m })
+await conn.sendMessage(m.chat, { text: `*[ ? ]*  Ingrese el comando y la opcion a convertir.\n\n• *Por ejemplo:*\n${usedPrefix + command} anime\n\n${txttt}` }, { quoted: m })
 }else if (args[0] === 'anime') {
 if (!/image/g.test(mime)) return conn.sendMessage(m.chat, { text: `*[ ? ]*  Ingrese el comando y responda a una imagen para convertirlo en anime.\n- Recuerde que tiene que tener la cara fija, para convertirlo en anime.` }, { quoted: m });
 await conn.sendMessage(m.chat, { text: `ⴵ _Detallando, espere un momento..._` }, { quoted: m });
