@@ -8,7 +8,7 @@ let ms = tes.map(v => `⊸⊹ *Titulo:* ${v.title}
 ⊸⊹ *Publicado en:* ${v.ago}
 ⊸⊹ *Vistas:* ${v.views.toLocaleString()}
 ⊸⊹ *Enlace:* ${v.url}`.trim()).join('\n\n')
-let teks = `•─• •⟤ \`YOUTUBE • PLAYS\` ⟥• •─•\n- _Resultados encontrados en *YouTube.*\n\n*[ 📍 ]* Puedes copiar el enlace y usar el comando *${usedPrefix}mp3* o *${usedPrefix}mp4* para descargarlo.\n⊹───────────────⊹\n\n${ms}`
+let teks = `•─• •⟤ \`YOUTUBE • PLAYS\` ⟥• •─•\n- _Resultados encontrados en *YouTube.*_\n\n*[ 📍 ]* Puedes copiar el enlace y usar el comando *${usedPrefix}mp3* o *${usedPrefix}mp4* para descargarlo.\n⊹───────────────⊹\n\n${ms}`
 teks += `\n\n> ${textoInfo}`
 conn.sendMessage(m.chat, { text: teks, contextInfo: { externalAdReply: { title: wm, body: textoInfo, thumbnailUrl: tes[0].image, sourceUrl: null, mediaType: 1, showAdAttribution: true, renderLargerThumbnail: true }}} , { quoted: m })
 }
