@@ -1,5 +1,5 @@
 import axios from 'axios'
-let handler = async (m, { conn, text }) => {
+let handler = async (m, { conn, text, usedPrefix, command }) => {
 if (!text) return conn.sendMessage(m.chat, { text: `*[ ? ]*  Ingrese el comando y escriba el nombre del usuario para ver su informacion.\n\n• *Por ejemplo:*\n${usedPrefix + command} lol_sd` }, { quoted: m })
 await conn.sendMessage(m.chat, { text: `ⴵ _Buscando resultados, espere un momento..._` }, { quoted: m })
 try {
