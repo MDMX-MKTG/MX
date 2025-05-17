@@ -1,7 +1,7 @@
 import fetch from 'node-fetch'
 const { generateWAMessageContent, generateWAMessageFromContent, proto } = (await import('@whiskeysockets/baileys')).default
 
-let handler = async (m, { conn, text }) => {
+let handler = async (m, { conn, text, usedPrefix, command }) => {
 if (!text) return conn.sendMessage(m.chat, { text: `*[ ? ]*  Ingrese el comando y escriba lo que quiera buscar en *Google*.\n\n? *Por ejemplo:*\n${usedPrefix + command} Arboles` }, { quoted: m });
 
 let contenidos = `
