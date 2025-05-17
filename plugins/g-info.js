@@ -12,7 +12,7 @@ let texto = `*[ 📍 ]* Informacion grupal completo.
 
 *[ ADMINISTRADORES ]:*
 ${listAdmin}`.trim()
-await conn.sendMessage(m.chat, { text: texto, mentions: [...groupAdmins.map(v => v.id), owner], contextInfo: { externalAdReply: { title: wm, body: textoInfo, thumbnailUrl: mxLogo, sourceUrl: null, mediaType: 1, showAdAttribution: true, renderLargerThumbnail: true }}} , { quoted: m })
+await conn.sendMessage(m.chat, { text: texto, mentions: await conn.parseMention(texto), contextInfo: { externalAdReply: { title: wm, body: textoInfo, thumbnailUrl: mxLogo, sourceUrl: null, mediaType: 1, showAdAttribution: true, renderLargerThumbnail: true }}} , { quoted: m })
 }
 handler.command = ["infogrupo", "infog"]
 handler.group = true
