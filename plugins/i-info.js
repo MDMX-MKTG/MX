@@ -1,4 +1,4 @@
-let handler = async (m, { conn, command, usedPrefix }) => {
+let handler = async (m, { conn, command, usedPrefix, args }) => {
 let user = db.data.users[m.sender]
 if (!args[0]) {
 let informacion = `
