@@ -1,3 +1,4 @@
+import { webp2png } from '../lib/webp2mp4.js'
 import uploadImage from '../lib/uploadImage.js';
 const handler = async (m, {conn, text, args, usedPrefix, command}) => {
 const q = m.quoted ? m.quoted : m;
