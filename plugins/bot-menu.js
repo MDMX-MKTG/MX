@@ -50,7 +50,7 @@ ${readMore}
 ╭• *${usedPrefix + command}* 26 =  *<actions>*
 ╭• *${usedPrefix + command}* 27 =  *<shop>*
 ╰───────────────•`
-conn.sendMessage(m.chat, { text: `${menu}`, mentions: conn.conn.parseMention(menu), contextInfo: { externalAdReply: { title: '⫶☰ B I E N V E N I D O', body: '🝐 Este es el listado de menus disponibles.', thumbnailUrl: mxMenu3, sourceUrl: null, mediaType: 1, showAdAttribution: false, renderLargerThumbnail: false }}}, { quoted: m }) //Imagen personalizada con una imagen pequeña.
+conn.sendMessage(m.chat, { text: menu1, mentions: [m.sender, conn.user.jid] }, { quoted: m })
 } else if (args[0] === '1' || args[0] === 'info') {
 let menu1 = `*⟣──•【  M E N U  :  1  】•──⟢*
 ❒ *Usuario:* ${taguser} 
