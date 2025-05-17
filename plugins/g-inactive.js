@@ -24,9 +24,7 @@ sider.push(member[i])
 
 if (!args[0]) {
 return conn.sendMessage(m.chat, { text: `*[ ? ]*  Ingrese el comando y use una opcion valida para su uso.\n- Existen dos opciones operativas.\n\n• *Usos disponibles:*\n\`${usedPrefix + command} list\`\n> ╰ ≻ _Ver una lista completa de los inactivos en este grupo._\n\`${usedPrefix + command} kill\`\n> ╰ ≻ _Eliminar todos los inactivos en este grupo._\n\n• *Por ejemplo:*\n${usedPrefix + command} list` }, { quoted: m })
-}
-
-if (args[0] === 'list' || args[0] === 'lista') {
+} else if (args[0] === 'list' || args[0] === 'lista') {
 if (total === 0) return conn.sendMessage(m.chat, { text: `*[ ✘ ]*  No hay contadores bajo cero en este grupo.\n- Vuelva pronto a ver nuevamente la lista.\n\n*[ 📍 ]* El bot comienza el conteo al entrar en el grupo y cada persona nueva tendra su conteo de mensajeria grupal en el bot.\n- Si permanece inactivo, tiene 0 conteos de mensajeria y sera eliminado.`}, { quoted: m })
 const groupName = await conn.getName(m.chat)
 const message = `*[ 📍 ]* Aqui esta la lists de miembros inactivos.
@@ -36,9 +34,7 @@ const message = `*[ 📍 ]* Aqui esta la lists de miembros inactivos.
 *[ LISTA DE INACTIVOS ]:*
 ${sider.map(v => '• @' + v.replace(/@.+/, '')).join('\n')}`
 return conn.sendMessage(m.chat, { text: message, { contextInfo: { mentionedJid: sider }}}, { quoted: m })
-}
-
-if (args[0] === 'kick' || args[0] === 'kill') {
+} else if (args[0] === 'kick' || args[0] === 'kill') {
 if (total === 0) return conn.sendMessage(m.chat, { text: `*[ ✘ ]*  No hay miembros inactivos para eliminar por el momento, vuelva a intentarlo pronto.`}, { quoted: m })
 for (const user of sider) {
 try {
@@ -52,9 +48,7 @@ return conn.sendMessage(m.chat, { text: `✓  Se han eliminado ${total} miembros
 return conn.sendMessage(m.chat, { text: `*[ ✘ ]*  La opcion es invalida, ingrese el comando y sus funciones disponibles.\n\n• *Usos disponibles:*\n\`${usedPrefix + command} list\`\n> ╰ ≻ _Ver una lista completa de los inactivos en este grupo._\n\`${usedPrefix + command} kill\`\n> ╰ ≻ _Eliminar todos los inactivos en este grupo._\n\n• *Por ejemplo:*\n${usedPrefix + command} list`}, { quoted: m })
 }
 
-handler.help = ['inactivos']
-handler.tags = ['group']
-handler.command = /^(inactivos|gcinactivos)$/i
+handler.command = ["in", "inactivos"]
 handler.group = true
 handler.admin = true
 handler.botAdmin = true
