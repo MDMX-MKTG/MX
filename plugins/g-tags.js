@@ -9,7 +9,7 @@ let pesan = args.join` `
 let teks = `• ── • ✦ *\`MENSAJE\`* ✦ • ──•\n- ${pesan || '¡Hola!'}\n\n`
 for (let mem of participants) {
 teks += `· ⟢  @${mem.id.split('@')[0]}\n`}
-conn.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id), contextInfo: { externalAdReply: { title: wm, body: textoInfo, thumbnailUrl: mxMenu1, sourceUrl: null, mediaType: 1, showAdAttribution: true, renderLargerThumbnail: true }}} , { quoted: m })
+conn.sendMessage(m.chat, { text: teks, mentions: [ participants.map(a => a.id) ], contextInfo: { externalAdReply: { title: wm, body: textoInfo, thumbnailUrl: mxMenu1, sourceUrl: null, mediaType: 1, showAdAttribution: true, renderLargerThumbnail: true }}} , { quoted: m })
 }
 
 if (command == 'v.tag' || command == 'v.tags') {
@@ -31,7 +31,7 @@ teks += `⊸⊹ *Inactivos:* ${inactiveCount}\n\n*[ 📍 ]* Informacion del grup
 /*for (let mem of memberData) {
 teks += `@${mem.id.split('@')[0]} ${mem.messages}\n`;
 }*/
-conn.sendMessage(m.chat, { text: teks, mentions: memberData.map(a => a.id) }, { quoted: m });
+conn.sendMessage(m.chat, { text: teks, mentions: [ memberData.map(a => a.id) ] }, { quoted: m });
 }
 }
 handler.command = ["tags", "tage", "v.tag", "v.tags"]
