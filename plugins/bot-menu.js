@@ -73,7 +73,9 @@ ${readMore}
 ─⊹ _${usedPrefix}ping_
 ─⊹ _${usedPrefix}server_
 ─⊹ _${usedPrefix}run_`.trim();
-conn.sendMessage(m.chat, { text: menu1, mentions: [m.sender] }, { quoted: m })
+conn.sendMessage(m.chat, { text: menu1, mentions: [m.sender] contextInfo: { externalAdReply: { title: wm, body: textoInfo, thumbnailUrl: mxLogo, sourceUrl: null, mediaType: 1, showAdAttribution: true, renderLargerThumbnail: true }}} , { quoted: m }) 
+  
+  //conn.sendMessage(m.chat, { text: menu1, mentions: [m.sender] }, { quoted: m })
 } else if (args[0] === '2' || args[0] === 'base') {
 let menu2 = `*⟣──•【  M E N U  :  2  】•──⟢*
 ❒ *Usuario:* ${taguser} 
