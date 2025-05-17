@@ -22,7 +22,7 @@ let txt = `•─• •⟤ \`MP4 • YOUTUBE\` ⟥• •─•
 
 try {
 const resolution = '360'
-const response = await fetch(`https://cloudkutube.eu/api/ytv?url=${encodeURIComponent(izumi.url)}&resolution=${resolution}`)
+const response = await fetch(`https://cloudkutube.eu/api/ytv?url=${encodeURIComponent(mdmx.url)}&resolution=${resolution}`)
 const data = await response.json()
 
 if (data.status !== 'success') throw new Error('Fallo al obtener el vídeo.')
