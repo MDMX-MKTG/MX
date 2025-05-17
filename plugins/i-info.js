@@ -108,14 +108,12 @@ let creador = `*[ 📍 ]* Aqui tienes el contacto del creador, puedes agregarlo 
 • *WhatsApp Messenger:*
 ${ceowa}
 
-• *WhatsApp Business:*
-${ceowa2}
-
 • *Telegram:*
 ${ceotg}
 
 \`NOTA:\`
 > Para hablar, debes tener el respeto necesario, consultar problemas del proyecto o cualquier otra duda sobre el tema, es posible que no conteste consultas relacionadas consigo mismo o tambien contesta informacion seria o ayuda confiable.`
+await conn.sendMessage(m.chat, { text: creador }, { quoted: m })
 };
 };
 
