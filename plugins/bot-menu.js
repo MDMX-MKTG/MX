@@ -49,7 +49,7 @@ ${readMore}
 ╭• *${usedPrefix + command}* 26 =  *<actions>*
 ╭• *${usedPrefix + command}* 27 =  *<shop>*
 ╰───────────────•`
-await conn.sendMessage(m.chat, { video: { url: ['https://qu.ax/pgQdE.mp4', 'https://qu.ax/SExJZ.mp4'].getRandom() }, gifPlayback: true, caption: menu, mentions: [m.sender, global.conn.user.jid] }, { quoted: fkontak }) 
+await conn.sendMessage(m.chat, { video: { url: ['https://qu.ax/pgQdE.mp4', 'https://qu.ax/SExJZ.mp4', 'https://qu.ax/DeJJE.mp4', 'https://qu.ax/sKhFc.mp4', 'https://qu.ax/CxdjT.mp4'].getRandom() }, gifPlayback: true, caption: menu, mentions: [m.sender, global.conn.user.jid] }, { quoted: fkontak }) 
   //await conn.sendMessage(m.chat, { video: { url: `https://qu.ax/pgQdE.mp4` }, gifPlayback: true, caption: menu, contextInfo: ceotg })
   //conn.sendMessage(m.chat, { text: menu, mentions: [m.sender, conn.user.jid] }, { quoted: m })
 } else if (args[0] === '1' || args[0] === 'info') {
