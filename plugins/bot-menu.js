@@ -1,6 +1,5 @@
 let handler = async (m, { conn, text, args, usedPrefix, command }) => {
 let fotoo = mxMenu3
-let { name, registered } = global.db.data.users[conn.user.jid]
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 let mentionedJid = [who]
 let username = conn.getName(who)
@@ -50,7 +49,8 @@ ${readMore}
 ╭• *${usedPrefix + command}* 26 =  *<actions>*
 ╭• *${usedPrefix + command}* 27 =  *<shop>*
 ╰───────────────•`
-await conn.sendMessage(m.chat, { video: { url: `https://qu.ax/pgQdE.mp4` }, gifPlayback: true, caption: menu, contextInfo: ceotg })
+await conn.sendMessage(m.chat, { video: { url: `https://qu.ax/pgQdE.mp4` }, gifPlayback: true, caption: menu, mentions: [m.sender, global.conn.user.jid] }, { quoted: fkontak }) 
+  //await conn.sendMessage(m.chat, { video: { url: `https://qu.ax/pgQdE.mp4` }, gifPlayback: true, caption: menu, contextInfo: ceotg })
   //conn.sendMessage(m.chat, { text: menu, mentions: [m.sender, conn.user.jid] }, { quoted: m })
 } else if (args[0] === '1' || args[0] === 'info') {
 let menu1 = `*⟣──•【  M E N U  :  1  】•──⟢*
