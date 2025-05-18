@@ -49,7 +49,7 @@ ${readMore}
 ╭• *${usedPrefix + command}* 26 =  *<actions>*
 ╭• *${usedPrefix + command}* 27 =  *<shop>*
 ╰───────────────•`
-conn.sendMessage(m.chat, { text: menu, mentions: [m.sender, global.conn.user.jid], contextInfo: { externalAdReply: { title: wm, body: textoInfo, thumbnailUrl: mxLogo, sourceUrl: null, mediaType: 1, showAdAttribution: true, renderLargerThumbnail: true }}} , { quoted: fkontak }) 
+conn.sendMessage(m.chat, { text: menu, mentions: [m.sender, global.conn.user.jid], contextInfo: { externalAdReply: { title: wm, body: textoInfo, thumbnailUrl: ["https://qu.ax/XPDQK.jpg", "https://qu.ax/MooSb.jpg", "https://qu.ax/jbezp.jpg", "https://qu.ax/GbfQk.jpg"].getRandom(), sourceUrl: null, mediaType: 1, showAdAttribution: true, renderLargerThumbnail: true }}} , { quoted: fkontak }) 
   //await conn.sendMessage(m.chat, { video: { url: ['https://qu.ax/pgQdE.mp4', 'https://qu.ax/SExJZ.mp4', 'https://qu.ax/DeJJE.mp4', 'https://qu.ax/sKhFc.mp4', 'https://qu.ax/CxdjT.mp4'].getRandom() }, gifPlayback: true, caption: menu, mentions: [m.sender, global.conn.user.jid] }, { quoted: fkontak }) 
   //await conn.sendMessage(m.chat, { video: { url: `https://qu.ax/pgQdE.mp4` }, gifPlayback: true, caption: menu, contextInfo: ceotg })
   //conn.sendMessage(m.chat, { text: menu, mentions: [m.sender, conn.user.jid] }, { quoted: m })
