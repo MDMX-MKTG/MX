@@ -50,7 +50,8 @@ ${readMore}
 ╭• *${usedPrefix + command}* 26 =  *<actions>*
 ╭• *${usedPrefix + command}* 27 =  *<shop>*
 ╰───────────────•`
-conn.sendMessage(m.chat, { text: menu, mentions: [m.sender, conn.user.jid] }, { quoted: m })
+await conn.sendMessage(m.chat, { video: { url: `https://qu.ax/pgQdE.mp4` }, gifPlayback: true, caption: menu, contextInfo: ceotg })
+  //conn.sendMessage(m.chat, { text: menu, mentions: [m.sender, conn.user.jid] }, { quoted: m })
 } else if (args[0] === '1' || args[0] === 'info') {
 let menu1 = `*⟣──•【  M E N U  :  1  】•──⟢*
 ❒ *Usuario:* ${taguser} 
